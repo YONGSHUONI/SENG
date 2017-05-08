@@ -31,8 +31,6 @@ public class DatabaseOperations {
 		return false;
 	}
 	
-	
-	
 	//Check the given user name exist or not as a mysql user
 	public boolean checkDbUserExist(String username)
 	{
