@@ -104,7 +104,7 @@ public class DatabaseOperations {
 	public void assignPriviliges(String dbName , String username)
 	{
 		Connection connection = this.connect.getConnection();
-		username = "'"+username +"'@'%'";   //test here ********************************************    'localhost'
+		username = "'"+username +"'@'%'";   //******************************************** change from 'localhost' to '%'
 		String sql= "GRANT CREATE,SELECT,INSERT,UPDATE,DELETE,DROP ON " +dbName+ ".* to "+username;
 
 		try
