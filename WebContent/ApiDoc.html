@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>API Document</title>
+<link href="images/cloud.ico" rel="icon" type="image/x-icon"> 
+<link rel="stylesheet" type="text/css" href="css/document.css">
+</head>
+<body>
+<div class="left"></div>
+<div class="main">
+	<h2>API Document</h2>
+	<p>
+	******************************NOTICE***************<br>
+	DONT FORGET TO ADD jquery.js file<br>
+	&lthead><br>
+		&ltscript src="js/jquery.js">&lt/script><br>
+	&lt/head><br>
+	******************************NOTICE***************
+	<br><br>
+	   &ltscript type="text/javascript"><br>
+		$(document).ready(function(){<br>
+			var getInfo = "";<br>
+			var sendJson = {getInfo:getInfo};<br>
+			$.ajax({<br>
+				url : "http://143.167.9.237:8080/SENG/UserInfoServlet", <br>
+				data : sendJson,<br>
+				type: 'post',<br>
+				success : function(data){<br>
+					var json = JSON.parse(data);<br>
+					var username = json.username;<br>
+					var userId = json.userId;<br>
+				},<br>
+				error : function(){<br>
+					window.location.href = "http://143.167.9.237:8080/SENG/login.html";<br>
+				}<br>
+			});<br>
+		})<br>
+	&lt/script><br>
+	<p>
+</div>
+</body>
+</html>

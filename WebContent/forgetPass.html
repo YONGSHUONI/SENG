@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Forget Password</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<link href="images/cloud.ico" rel="icon" type="image/x-icon">
+<!-- font -->
+<link href='http://fonts.googleapis.com/css?family=Josefin+Sans:400,100,100italic,300,300italic,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!-- font -->
+<!-- css -->
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />	
+<!--css -->
+<script src="js/jquery.min.js"></script>
+<script src="js/RegEx.js"></script>
+</head>
+<body style="background-color: #262c54;"> 
+<div class="top"></div>
+
+<div class="register">
+	<div class="container">
+		<h2 style="color: #fFF;">Forget Password</h2>
+
+		<div class="col-md-8 col-md-offset-2 register-Info">
+			<!-- <form id=“emailAddress”> -->
+				<label>Username :</label> 
+				<input type="text" class="text" name="Username" placeholder="Username" id="username">
+				<input type="submit" class="submit_btn" value="Submit" id="submit">
+			<!-- </form> -->
+		</div>
+		<script type="text/javascript">
+			$("#submit").click(function (){
+				var username = $("#username").val();
+				var userData = {
+					username : username,
+				};
+				console.log(userData);
+				$.ajax({
+					url : 'http://143.167.9.237:8080/SENG/ForgetPasswordServlet',
+					data : userData,
+					type: 'post',
+					dataType :'json',
+					success : function(){
+						window.location.href = 'reminder.html';
+					},
+					error: function(){
+						alert("ajax error");
+					}
+				});
+			});
+		</script>
+		<div class="clearfix"></div>
+	</div>
+</div>
+<!-- footer -->
+<div class="footer">
+	<div class="container">
+		<div class="clearfix"></div>
+		<div class="copyright" style="border-top: 1px dashed #FFF;" >
+			<p style="color: #FFF;">Copyright &copy; 2017.Cloud Computing Team 02 All rights reserved.</p>
+		</div>
+	</div>
+</div>
+<!-- //footer -->
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Login</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<link href="images/cloud.ico" rel="icon" type="image/x-icon">
+<!-- font -->
+<link href='http://fonts.googleapis.com/css?family=Josefin+Sans:400,100,100italic,300,300italic,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!-- font -->
+<!-- css -->
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />	
+<!--css -->
+<script src="js/jquery.min.js"></script>
+</head>
+<body style="background-color: #262c54;"> 
+<div class="top"></div>
+
+<div class="register">
+	<div class="container">
+		<h2 style="color: #fFF;">Login</h2>
+
+		<div class="col-md-8 col-md-offset-2 register-Info">
+			<!-- <form id="login"> -->
+			<ul>
+				<li>
+					<label>Username :</label>
+					<input type="text" class="text" name="Username" placeholder="Username" id="username">
+				</li>
+				<li>
+					<label>Password :</label>
+					<input type="password" class="text" name="Password" placeholder="Password" id="password">
+				</li>
+			</ul>
+			<div class="col-md-8 col-md-offset-2">
+				<span class="notice" id="notice"  style="color: #FFF;"></span>
+			</div>
+			<input type="button" class="submit_btn" value="Login" id="submit">
+			<label style="width: 100%; padding:20px 0 0 0; margin:10px 0;">No account? <a href="register.html">Register Now</a></label>
+			
+			<label style="width: 100%; padding:0;"><a href="forgetPass.html">Forget Password?</a></label>
+			
+		</div>
+		<script type="text/javascript">
+			$("#submit").on("click", function(){
+				var username = $("#username").val();
+				var password = $("#password").val();
+				
+				var logData = {username : username, password : password};
+
+				$.ajax({
+					url : "http://143.167.9.237:8080/SENG/LoginServlet",    //*******************************************************************
+					/* url : "http://143.167.9.237:8080/CloudServer/LoginServlet", */ 
+					data : logData,
+					type: 'post',
+					success : function(data){
+						var test = JSON.parse(data).status;
+						if(test=="true"){
+							window.location.href = 'index.jsp';
+						}else if(test=="false"){
+							document.getElementById("notice").innerHTML = "Reminder :   username/password wrong";
+						}
+					},
+					error : function(){
+						
+					}
+				});
+			});
+		</script>
+		<div class="clearfix"></div>
+	</div>
+</div>
+<!-- footer -->
+<div class="footer">
+	<div class="container">
+		<div class="clearfix"></div>
+		<div class="copyright" style="border-top: 1px dashed #FFF;" >
+			<p style="color: #FFF;">Copyright &copy; 2017.Cloud Computing Team 02 All rights reserved.</p>
+		</div>
+	</div>
+</div>
+<!-- //footer -->
+</body>
+</html>

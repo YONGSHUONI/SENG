@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test API</title>
+<script src="js/jquery-1.7.2.js"></script>
+</head>
+<body>
+hi
+</body>
+
+/* $(document).ready(function(){
+	alert("hi");
+	var getInfo = "true";
+	var sendJson = {getInfo:getInfo};
+	$.ajax({ url: "http://localhost:8080/CloudServer/UserInfoServlet",
+			data : sendJson,
+			type: 'post',
+	        success: function(){
+	           alert("done");
+	        }});
+	}); */
+
+
+
+
+		<script type="text/javascript">
+			$(document).ready(function(){
+				var getInfo = "";
+				var sendJson = {getInfo:getInfo};
+				$.ajax({
+					url : "http://143.167.9.207:8080/SENG/UserInfoServlet",   
+					data : sendJson,
+					type: 'post',
+					success : function(data){
+						var json = JSON.parse(data);
+						var username = json.username;
+						var userId = json.userId;
+					},
+					error : function(){
+						window.location.href="http://143.167.9.207:8080/SENG/login.html";
+					}
+				});
+			})
+		</script>
+
+
+
+</html>

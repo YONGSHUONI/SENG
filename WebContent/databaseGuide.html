@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Database guide</title>
+<link href="images/cloud.ico" rel="icon" type="image/x-icon"> 
+<link rel="stylesheet" type="text/css" href="css/document.css">
+
+</head>
+<body>
+<div class="left"></div>
+<div class="main">
+		<h2>Database guide</h2>
+		<div class="text">
+			
+				<span>
+					<strong>Access via JDBC</strong>
+				</span><br>
+				<span>
+				To use JDBC you need to load the mysql driver
+				</span><br>
+				<span>
+					Class.forName("org.gjt.mm.mysql.Driver").newInstance();
+				</span><br>
+				<span>
+					and then open a connection,
+				</span><br>
+				<span>
+					String DB="jdbc:mysql://127.0.0.1:3306/ + "Database Name"
+				</span><br>
+				<span>
+					e.g.
+				</span><br>
+				<span>
+					String DB="jdbc:mysql://127.0.0.1/mydatabase";
+				</span><br>
+				<span>
+					Conn = DriverManager.getConnection(DB);
+				</span><br>
+				<p></p>
+				<span>
+					<strong>Access via command line:</strong>
+				</span><br>
+				<span>
+				% command -h143.167.9.237 -u "your username" 
+				</span><br>
+				<span>
+				After you access their, you can also generate your password by yourself.
+				</span>
+				
+		</div>
+</div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+*{
+	margin:0;
+	padding: 0;
+}
+
+body{
+	background: #e8e8e8;
+}
+
+.left{
+	width:20%;
+	height: 1000px;
+	float: left;
+	overflow: hidden;
+}
+
+.main{
+	width: 80%;
+	height: 1000px;
+	float: left;
+	overflow: hidden;
+	background: #FFF;
+}
+.main h2{
+	width: 100%;
+	color: #262c54;
+	line-height: 100px;
+	border-bottom: 2px solid #999;
+	margin:0 20px;
+}
+.main p{
+	line-height: 30px;
+	padding:20px 0 0 20px;
+}
+.text{
+	width :100%;
+	display: block;
+}
+.text span {
+	line-height: 40px;
+	padding: 20px;
+}
