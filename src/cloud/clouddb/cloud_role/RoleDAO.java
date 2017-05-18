@@ -64,7 +64,16 @@ public class RoleDAO{
 	}
 	
 	public static void main(String[] args){
-	
+		User user = new User();
+		user.setUsername("sefa");
+		user.setRole_id(1);
+		user.setId(2);
+		
+		Role role = new Role();
+		role.setUser_id(2);
+		
+		RoleDAO roleDAO = new RoleDAO();
+		System.out.println(roleDAO.initRole(3));
 	}
 	
 }

@@ -31,6 +31,8 @@ public class DatabaseOperations {
 		return false;
 	}
 	
+	
+	
 	//Check the given user name exist or not as a mysql user
 	public boolean checkDbUserExist(String username)
 	{
@@ -102,7 +104,7 @@ public class DatabaseOperations {
 	public void assignPriviliges(String dbName , String username)
 	{
 		Connection connection = this.connect.getConnection();
-		username = "'"+username +"'@'%'";   //******************************************** change from 'localhost' to '%'
+		username = "'"+username +"'@'%'";   //test here ********************************************    'localhost'
 		String sql= "GRANT CREATE,SELECT,INSERT,UPDATE,DELETE,DROP ON " +dbName+ ".* to "+username;
 
 		try
