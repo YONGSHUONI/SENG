@@ -109,7 +109,7 @@
 			%>
 				<li>
 					<label>Price:</label>
-					<input type="text" class="text" name="price" id="price" placeholder="Price of your app (per use, must be a number)" required>
+					<input type="number" step='0.1' class="text" name="price" id="price" placeholder="Price of your app (per use, must be a number)" required>
 				</li>
 				<li>
 					<label>Required API Service :</label>
